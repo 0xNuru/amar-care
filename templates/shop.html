@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Shop
+{% endblock %}
+
+{% block main %}
+    <main class="container-fluid py-5 text-center">
+     <div class="container" id="search-bar">
+        <div class="row">
+            <div class="col align-self-center">
+              <form action="/shop" id="product" method="post">
+                <div class="input-group mb-3" >
+                <input type="text" class="form-control" name="product" aria-label="Text input with dropdown button" placeholder="Search for products" required>
+                <button class="btn btn-primary" type="submit">search</button>
+              </form>
+          </div>
+        </div>
+      </div>
+     </div>
+
+        <div class="card">
+      <div class="card-header" style="font-size: large;">
+        <i>Top Sales!</i>
+      </div>
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+              {% for product in all_products %}
+                  <div class="col-12 col-md-6 col-lg-3 card-item">
+                    <div class="card h-100" style="width: 18rem;">
+                      <img src="{{product["image"]}}" class="card-img-top" alt="pic">
+                      <div class="card-body">
+                        <h5 class="card-title">{{product["name"]}}</h5>
+                        <h4 class="card-title">${{product["price"]}}</h4>
+                        <p class="card-text">{{product["description"]}}</p>
+                        <form action="/order" method="post">
+                          <input style="display:none;" name="product" value={{product["id"]}}>
+                          <button style="margin-bottom:10px;" class="btn btn-primary" type="submit">Buy now!</button>
+                        </form>
+                        <form action="/order" method="post">
+                          <input style="display:none;" name="product" value={{product["id"]}}>
+                          <button style="margin-bottom:10px;" class="btn btn-primary" type="submit">Add to cart</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+              {% endfor %}
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+
+
+        <div class="card">
+         <div class="card-body mx-auto">
+          <div id="icons">
+          <a href="https://web.facebook.com/nurudeen.ahmad.71" class="fa fa-facebook icons" style="font-size: xx-large;"></a>
+          <a href="https://twitter.com/nurvdeen4?s=20&t=Du_tqiu6oraiU_O-FD9rGg" class="fa fa-twitter icons" style="font-size: xx-large;"></a>
+          <a href="https://www.google.com/" class="fa fa-google icons" style="font-size: xx-large;"></a>
+          <a href="https://www.linkedin.com/in/nurudeen-ahmed-80a1a11b8/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BCbGh6YqnSouciAHLJF8rhw%3D%3D" class="fa fa-linkedin icons" style="font-size: xx-large;"></a>
+          <a href="https://www.youtube.com/channel/UCgD8FOOwIJjYZ0_9LLzA4LA" class="fa fa-youtube icons" style="font-size: xx-large;"></a>
+          <a href="https://www.instagram.com/nuru_4/" class="fa fa-instagram icons" style="font-size: xx-large;"></a>
+          <a href="https://media.tenor.com/udq1uD9WHSQAAAAC/oops.gif" class="fa fa-pinterest icons" style="font-size: xx-large;"></a>
+        </div>
+      </div>
+    </main>
+{% endblock %}

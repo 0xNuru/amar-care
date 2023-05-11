@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Order
+{% endblock %}
+
+{% block main %}
+
+    <main class="container-fluid py-5 text-center">
+
+        <div class="card">
+            <div class="card-header">
+            </div>
+            {% for result in results %}
+            <div class="card-body" style="padding-left:40px;">
+                <img src="{{result["image"]}}" class="order-img" alt="...">
+                <h5 class="card-title">{{result["name"]}}</h5>
+                <h4 class="card-title">${{result["price"]}}</h4>
+                <p class="card-text">{{result["description"]}}</p>
+                    <button style="margin-bottom:10px;" class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Place order!</button>
+            </div>
+            <div class="card-footer text-muted">
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Confirm your order to pay on delivery</p>
+                    <form action="/success" method="post">
+                        <input style="display:none;" name="product" value={{result["id"]}}>
+                        <input class="form-control form-control-sm mx-auto" name="amount" type="number" placeholder="Quantity" aria-label=".form-control-sm example" style="width:100px; margin-bottom:10px;" required >
+                        <button style="margin-bottom:10px;" class="btn btn-primary" type="submit">Place order!</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="card" style="bottom:-460px;">
+        <div class="card-header" style="font-size: large;">
+        </div>
+        <div class="card-body mx-auto">
+          <div id="icons">
+          <a href="https://web.facebook.com/nurudeen.ahmad.71" class="fa fa-facebook icons" style="font-size: xx-large;"></a>
+          <a href="https://twitter.com/nurvdeen4?s=20&t=Du_tqiu6oraiU_O-FD9rGg" class="fa fa-twitter icons" style="font-size: xx-large;"></a>
+          <a href="https://www.google.com/" class="fa fa-google icons" style="font-size: xx-large;"></a>
+          <a href="https://www.linkedin.com/in/nurudeen-ahmed-80a1a11b8/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BCbGh6YqnSouciAHLJF8rhw%3D%3D" class="fa fa-linkedin icons" style="font-size: xx-large;"></a>
+          <a href="https://www.youtube.com/channel/UCgD8FOOwIJjYZ0_9LLzA4LA" class="fa fa-youtube icons" style="font-size: xx-large;"></a>
+          <a href="https://www.instagram.com/nuru_4/" class="fa fa-instagram icons" style="font-size: xx-large;"></a>
+          <a href="https://media.tenor.com/udq1uD9WHSQAAAAC/oops.gif" class="fa fa-pinterest icons" style="font-size: xx-large;"></a>
+        </div>
+      </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <main class="container-fluid py-5 text-center">
+        <!-- https://memegen.link/ -->
+        <img alt="{{ top }}" class="border img-fluid" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://i.kym-cdn.com/photos/images/newsfeed/000/285/884/44d.jpg" title="{{ top }}">
+    </main>
+{% endblock %}

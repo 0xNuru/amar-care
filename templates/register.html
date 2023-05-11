@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <main class="container-fluid py-5 text-center">
+        <form action="/register" method="post">
+            <div class="mb-3">
+                <h4>Email</h4>
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="email" name="email" placeholder="hi@email.com" type="text">
+            </div>
+            <div class="mb-3">
+                <h4>Password</h4>
+                <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password" minlength="4">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" id="password" name="confirmation" placeholder="Confirm Password" type="password" minlength="4">
+            </div>
+            <div class="mb-3">
+                <h4>Shipping address</h4>
+                <textarea style="width:30%" class="form-control mx-auto" id="address" name="address" rows="3" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">sign up</button>
+        </form>
+
+        <div class="card" style="bottom:-460px;">
+        <div class="card-header" style="font-size: large;">
+        </div>
+        <div class="card-body mx-auto">
+          <div id="icons">
+          <a href="https://web.facebook.com/nurudeen.ahmad.71" class="fa fa-facebook icons" style="font-size: xx-large;"></a>
+          <a href="https://twitter.com/nurvdeen4?s=20&t=Du_tqiu6oraiU_O-FD9rGg" class="fa fa-twitter icons" style="font-size: xx-large;"></a>
+          <a href="https://www.google.com/" class="fa fa-google icons" style="font-size: xx-large;"></a>
+          <a href="https://www.linkedin.com/in/nurudeen-ahmed-80a1a11b8/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BCbGh6YqnSouciAHLJF8rhw%3D%3D" class="fa fa-linkedin icons" style="font-size: xx-large;"></a>
+          <a href="https://www.youtube.com/channel/UCgD8FOOwIJjYZ0_9LLzA4LA" class="fa fa-youtube icons" style="font-size: xx-large;"></a>
+          <a href="https://www.instagram.com/nuru_4/" class="fa fa-instagram icons" style="font-size: xx-large;"></a>
+          <a href="https://media.tenor.com/udq1uD9WHSQAAAAC/oops.gif" class="fa fa-pinterest icons" style="font-size: xx-large;"></a>
+        </div>
+      </div>
+    </main>
+{% endblock %}
