@@ -1,0 +1,4 @@
+coen-409
+
+#ignore all .md files
+*.md

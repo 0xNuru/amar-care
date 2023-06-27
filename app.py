@@ -4,7 +4,7 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, usd
+from helpers import apology, login_required, usd 
 
 # Configure application
 app = Flask(__name__)
@@ -158,7 +158,8 @@ def order():
     if request.method == "POST":
         product = request.form.get("product")
         results = db.execute("SELECT * FROM products WHERE id = ?", product)
-        db.execute("INSERT INTO orders (userId, productId) VALUES(?, ?)", session["user_id"], int(product))
+        db.execute("INSERT INTO orders (userId, productId) VALUES(?, ?)",
+                   session["user_id"], int(product))
         return render_template("order.html", results=results)
     return render_template("order.html")
 
@@ -176,7 +177,8 @@ def success():
             error = "we only have " + str(available) + " units left"
             return apology(error, 400)
         db.execute("UPDATE products SET stock = ? WHERE id = ?", stock, product)
-        db.execute("DELETE FROM orders WHERE productId = ? AND userId = ?", product, session["user_id"])
+        db.execute("DELETE FROM orders WHERE productId = ? AND userId = ?",
+                   product, session["user_id"])
         flash("SUCCESS!")
         return render_template("success.html", results=results)
     return render_template("success.html")
@@ -186,6 +188,6 @@ def success():
 @login_required
 def orders():
     user_id = session["user_id"]
-    results = db.execute("SELECT DISTINCT * FROM orders JOIN products ON orders.productId=products.id WHERE userId = ?", user_id)
+    results = db.execute(
+        "SELECT DISTINCT * FROM orders JOIN products ON orders.productId=products.id WHERE userId = ?", user_id)
     return render_template("orders.html", results=results)
-
