@@ -189,3 +189,4 @@ def orders():
     results = db.execute("SELECT DISTINCT * FROM orders JOIN products ON orders.productId=products.id WHERE userId = ?", user_id)
     return render_template("orders.html", results=results)
 
+
