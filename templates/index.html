@@ -1,110 +1,164 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block title %} Homepage {% endblock %} {% block
+main %}
 
-{% block title %}
-    Homepage
-{% endblock %}
-
-{% block main %}
-
-  <main class="container-fluid py-5 text-center" style="padding-left: 0px;padding-right: 0px;padding-bottom: 0px! important;">
-    <div class="jumbotron">
-      <h1 class="display-4">We Care!</h1>
-      <p class="lead">We're one call away!</p>
-      <hr class="my-4">
-    </div>
-  </main>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<main
+  class="container-fluid py-5 text-center"
+  style="padding-left: 0px; padding-right: 0px; padding-bottom: 0px !important"
+>
+  <div class="jumbotron">
+    <h1 class="display-4">We Care!</h1>
+    <p class="lead">We're one call away!</p>
+    <hr class="my-4" />
+  </div>
+</main>
+<div
+  id="carouselExampleIndicators"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="https://blackdoctorsusa.com/assets/images/blackdoctors.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+      <div class="container" id="c-text">
+        <h4>
+          <span class="badge bg-light text-dark"
+            >Stay healthy with Amar Care</span
+          >
+        </h4>
+        <a class="btn btn lg btn-primary" href="/consultation">
+          Talk to a Doctor
+        </a>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://blackdoctorsusa.com/assets/images/blackdoctors.jpg" class="d-block w-100" alt="...">
-          <div class="container" id="c-text">
-            <h4><span class="badge bg-light text-dark">Stay healthy with Amar Care</span></h4>
-          <a class="btn btn lg btn-primary" href="/consultation"> Talk to a Doctor </a>
-        </div>
-        </div>
-        <div class="carousel-item">
-          <img src="https://thumbs.dreamstime.com/b/delivery-service-black-male-courier-medical-mask-blue-cap-uniform-giving-cardboard-box-to-copy-space-isolated-yellow-200825655.jpg" class="d-block w-100" alt="...">
-          <div class="container" id="c-text">
-            <h4><span class="badge bg-light text-dark">Get your medication delivered without stress!</span></h4>
-            <a href="/shop" class="btn btn lg btn-primary"> Shop now </a>
-        </div>
-        </div>
-        <div class="carousel-item">
-          <img src="https://dano.com.ng/wp-content/uploads/2018/10/Family-1.png" class="d-block w-100" alt="...">
-        <div class="container" id="c-text">
-          <h4><span class="badge bg-light text-dark">Subscribe for our family plans</span></h4>
-          <a href="/register" class="btn btn lg btn-primary"> Sign up </a>
-        </div>
-        </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://thumbs.dreamstime.com/b/delivery-service-black-male-courier-medical-mask-blue-cap-uniform-giving-cardboard-box-to-copy-space-isolated-yellow-200825655.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+      <div class="container" id="c-text">
+        <h4>
+          <span class="badge bg-light text-dark"
+            >Get your medication delivered without stress!</span
+          >
+        </h4>
+        <a href="/shop" class="btn btn lg btn-primary"> Shop now </a>
       </div>
     </div>
-    <div class="jumbotron jumbotron-fluid" style="padding-top: 100px; padding-bottom: 20px;">
+    <div class="carousel-item">
+      <img
+        src="https://dano.com.ng/wp-content/uploads/2018/10/Family-1.png"
+        class="d-block w-100"
+        alt="..."
+      />
+      <div class="container" id="c-text">
+        <h4>
+          <span class="badge bg-light text-dark"
+            >Subscribe for our family plans</span
+          >
+        </h4>
+        <a href="/register" class="btn btn lg btn-primary"> Sign up </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="jumbotron jumbotron-fluid"
+  style="padding-top: 100px; padding-bottom: 20px"
+>
+  <div class="container">
+    <h1 class="display-4">About us</h1>
+    <p class="lead">
+      We are committed to curating a constantly-expanding index of free content
+      including recent innovations in healthcare, research and technology. We
+      are based in Africa, but our reach is truly global with over 121 million
+      annual visitor sessions worldwide. This website is certified by Health On
+      the Net Foundation.As a trusted source of all your medical and life
+      science needs, this site and content complies with the HONcode standard
+      for trustworthy health information, which you can verify here. We are
+      fully committed to the highest levels of Privacy and GDPR principles for
+      all site visitors and clients. Our activities on Privacy, Data collection
+      and Use have been certified to TRUSTe Enterprise Certification Standards.
+      TRUST Find out more details of the Certification Standards.
+    </p>
+  </div>
+</div>
+
+<main class="container-fluid py-5 text-center">
+  <div class="card">
+    <div class="card-header" style="font-size: large">
+      <i>Top Sales!</i>
+    </div>
+    <div class="card-body">
       <div class="container">
-        <h1 class="display-4">About us</h1>
-        <p class="lead">We are committed to curating a constantly-expanding index of free content including recent innovations in healthcare, research and technology.
-
-          We are based in Africa, but our reach is truly global with over 121 million annual visitor sessions worldwide.
-
-          This website is certified by Health On the Net Foundation.As a trusted source of all your medical and life science needs, this site and content complies with the HONcode standard for trustworthy health information, which you can verify here.
-
-          We are fully committed to the highest levels of Privacy and GDPR principles for all site visitors and clients. Our activities on Privacy, Data collection and Use have been certified to TRUSTe Enterprise Certification Standards.
-
-          TRUST Find out more details of the Certification Standards.</p>
-      </div>
-    </div>
-
-    <main class="container-fluid py-5 text-center">
-    <div class="card">
-      <div class="card-header" style="font-size: large;">
-        <i>Top Sales!</i>
-      </div>
-      <div class="card-body">
-        <div class="container">
-          <div class="row">
-              {% for product in all_products %}
-                  <div class="col-12 col-md-6 col-lg-3 card-item">
-                    <div class="card h-100" style="width: 18rem;">
-                      <img src="{{product["image"]}}" class="card-img-top" alt="pic">
-                      <div class="card-body">
-                        <h5 class="card-title">{{product["name"]}}</h5>
-                        <h4 class="card-title">${{product["price"]}}</h4>
-                        <p class="card-text">{{product["description"]}}</p>
-                        <form action="/order" method="post">
-                          <input style="display:none;" name="product" value={{product["id"]}}>
-                          <button style="margin-bottom:10px;" class="btn btn-primary" type="submit">Buy now!</button>
-                        </form>
-                        <form action="/order" method="post">
-                          <input style="display:none;" name="product" value={{product["id"]}}>
-                          <button style="margin-bottom:10px;" class="btn btn-primary" type="submit">Add to cart</button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-              {% endfor %}
+        <div class="row">
+          {% for product in all_products %}
+          <div class="col-12 col-md-6 col-lg-3 card-item">
+            <div class="card h-100" style="width: 18rem">
+              <img src="{{product["image"]}}" class="card-img-top" alt="pic">
+              <div class="card-body">
+                <h5 class="card-title">{{product["name"]}}</h5>
+                <h4 class="card-title">${{product["price"]}}</h4>
+                <p class="card-text">{{product["description"]}}</p>
+                <form action="/order" method="post">
+                  <input style="display:none;" name="product"
+                  value={{product["id"]}}>
+                  <button
+                    style="margin-bottom: 10px"
+                    class="btn btn-primary"
+                    type="submit"
+                  >
+                    Buy now!
+                  </button>
+                </form>
+                <form action="/order" method="post">
+                  <input style="display:none;" name="product"
+                  value={{product["id"]}}>
+                  <button
+                    style="margin-bottom: 10px"
+                    class="btn btn-primary"
+                    type="submit"
+                  >
+                    Add to cart
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
-    </main>
+  </div>
+</main>
 
-      <div class="card">
-        <div class="card-header" style="font-size: large;">
-        </div>
-        <div class="card-body mx-auto">
-          <div id="icons">
-          <a href="https://web.facebook.com/nurudeen.ahmad.71" class="fa fa-facebook icons" style="font-size: xx-large;"></a>
-          <a href="https://twitter.com/nurvdeen4?s=20&t=Du_tqiu6oraiU_O-FD9rGg" class="fa fa-twitter icons" style="font-size: xx-large;"></a>
-          <a href="https://www.google.com/" class="fa fa-google icons" style="font-size: xx-large;"></a>
-          <a href="https://www.linkedin.com/in/nurudeen-ahmed-80a1a11b8/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BCbGh6YqnSouciAHLJF8rhw%3D%3D" class="fa fa-linkedin icons" style="font-size: xx-large;"></a>
-          <a href="https://www.youtube.com/channel/UCgD8FOOwIJjYZ0_9LLzA4LA" class="fa fa-youtube icons" style="font-size: xx-large;"></a>
-          <a href="https://www.instagram.com/nuru_4/" class="fa fa-instagram icons" style="font-size: xx-large;"></a>
-          <a href="https://media.tenor.com/udq1uD9WHSQAAAAC/oops.gif" class="fa fa-pinterest icons" style="font-size: xx-large;"></a>
-        </div>
-      </div>
 
-{% endblock %}
+
+  {% endblock %}
+</div>
