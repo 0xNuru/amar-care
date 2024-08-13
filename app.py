@@ -190,3 +190,10 @@ def orders():
     return render_template("orders.html", results=results)
 
 
+@app.route("/paid_appointments")
+def paid_appointments():
+    return render_template("paid_appointments.html")
+
+@app.route("/free_appointments")
+def free_appointments():
+    return render_template("free_appointments.html")
