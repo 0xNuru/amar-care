@@ -32,7 +32,7 @@
                       <img src="{{result["image"]}}" class="card-img-top" alt="pic">
                       <div class="card-body">
                         <h5 class="card-title">{{result["name"]}}</h5>
-                        <h4 class="card-title">${{result["price"]}}</h4>
+                        <h4 class="card-title">₦{{result["price"]}}</h4>
                         <p class="card-text">{{result["description"]}}</p>
                         <form action="/order" method="post">
                           <input style="display:none;" name="product" value={{result["id"]}}>

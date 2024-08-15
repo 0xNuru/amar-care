@@ -124,7 +124,7 @@ main %}
               <img src="{{product["image"]}}" class="card-img-top" alt="pic">
               <div class="card-body">
                 <h5 class="card-title">{{product["name"]}}</h5>
-                <h4 class="card-title">${{product["price"]}}</h4>
+                <h4 class="card-title">₦{{product["price"]}}</h4>
                 <p class="card-text">{{product["description"]}}</p>
                 <form action="/order" method="post">
                   <input style="display:none;" name="product"
