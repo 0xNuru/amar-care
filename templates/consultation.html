@@ -1,229 +1,326 @@
-{% extends "layout.html" %}
-
-{% block title %}
-    Consultation
-{% endblock %}
-
-{% block main %}
-  <main class="container-fluid py-5 text-center" style="padding-left: 0px;padding-right: 0px;padding-bottom: 0px! important;">
-    <div class="jumbotron">
-      <h1 class="display-4">We Care!</h1>
-      <p class="lead">We are a medical consultation leader providing online consultation service in all area of medicine</p>
-      <hr class="my-4">
-    </div>
-  </main>
-    <div class="card">
-      <div class="card-header" style="font-size: large;">
-        <i style="padding-left:45%">Pediatricians</i>
-      </div>
-      <div class="card-body">
-        <div class="container">
-          <div class="row">
-            <div class="card mb-3 consult-card" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img src="https://identilam.co.uk/wp-content/uploads/2020/10/Industry-04.png" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Dr. William A. Abdu, M.D, M.S.</h5>
-                    <p class="card-text">Dr Abdu is a Professor of Pediatrics and The Dartmouth Institute Medical Director at Dartmouth Medical Center.</p>
-                    <a href="https://call.whatsapp.com/video/moTcHEUg15KJ0EMocHcstw" class="btn btn-primary">Book Appointment</a>
-                </div>
-                </div>
+{% extends "layout.html" %} {% block title %} Consultation {% endblock %} {%
+block main %}
+<main
+  class="container-fluid py-5 text-center"
+  style="padding-left: 0px; padding-right: 0px; padding-bottom: 0px !important"
+>
+  <div class="jumbotron">
+    <h1 class="display-4">We Care!</h1>
+    <p class="lead">
+      We are a medical consultation leader providing online consultation service
+      in all area of medicine
+    </p>
+    <hr class="my-4" />
+  </div>
+</main>
+<div class="card">
+  <div class="card-header" style="font-size: large">
+    <i style="padding-left: 45%">Pediatricians</i>
+  </div>
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="card mb-3 consult-card" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="https://identilam.co.uk/wp-content/uploads/2020/10/Industry-04.png"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
             </div>
-            </div>
-            <div class="card mb-3 consult-card" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img src="https://media.istockphoto.com/id/171296819/photo/african-american-female-doctor-holding-a-clipboard-isolated.jpg?s=612x612&w=0&k=20&c=hCJk-9gsOff8Fac04a11VMOwflMYiRXUVfAj3UTn67U=" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title"> Dr. Bolanle Reese hama, M.D.</h5>
-                    <p class="card-text">Dr Bolanle is also one of the best-known doctors of Paediatrics in the world. He graduated from the University of Miam</p>
-                    <a href="https://call.whatsapp.com/video/moTcHEUg15KJ0EMocHcstw" class="btn btn-primary">Book Appointment</a>
-                </div>
-                </div>
-            </div>
-            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dr. Chigoze A. Abdu, M.D, M.S.</h5>
+                <p class="card-text">
+                  Dr Abdu is a Professor of Pediatrics and The Dartmouth
+                  Institute Medical Director at Dartmouth Medical Center.
+                </p>
+                <a
+                  href="{{ url_for('free_appointments')}}"
+                  class="btn btn-primary"
+                  >Book Appointment</a
+                >
+              </div>
             </div>
           </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header" style="font-size: large;">
-        <i style="padding-left:45%">Neurologists</i>
-      </div>
-      <div class="card-body">
-        <div class="container">
-          <div class="row">
-            <div class="card mb-3 consult-card" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img src="https://thumbs.dreamstime.com/b/african-american-black-doctor-man-over-blue-background-89746088.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Dr. Corrie T.M Anderson, M.D.</h5>
-                    <p class="card-text">Dr Corrie is a well-known neurologist. His specialisation field is nerve of neurology and brain cells.</p>
-                    <a href="https://call.whatsapp.com/video/moTcHEUg15KJ0EMocHcstw" class="btn btn-primary">Book Appointment</a>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="card mb-3 consult-card" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img src="https://media.istockphoto.com/id/177839842/photo/smiling-doctor-woman-with-arms-crossed.jpg?s=612x612&w=0&k=20&c=infRKfdmTMS8WYFZHF_GPuBpLPszyyXhiP5Er9a50jA=" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Dr. Deepa Ravichandran, MDS</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nulla id arcu luctus vulputate quis ac purus</p>
-                    <a href="https://call.whatsapp.com/video/moTcHEUg15KJ0EMocHcstw" class="btn btn-primary">Book Appointment</a>
-                </div>
-                </div>
-            </div>
-            </div>
-            </div>
-          </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header" style="font-size: large;">
-        <i style="padding-left:45%">Cardiologists</i>
-      </div>
-      <div class="card-body">
-        <div class="container">
-          <div class="row">
-            <div class="card mb-3 consult-card" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img src="http://www.gkmhospital.in/img/team/team20.png" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Dr Mona. M. Abaza, M.D.</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nulla id arcu luctus vulputate quis ac purus</p>
-                    <a href="https://call.whatsapp.com/video/moTcHEUg15KJ0EMocHcstw" class="btn btn-primary">Book Appointment</a>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="card mb-3 consult-card" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img src="https://www.doctorcare.ca/wp-content/uploads/2020/09/header-05.png" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Dr Naresh Trehan</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nulla id arcu luctus vulputate quis ac purus</p>
-                    <a href="https://call.whatsapp.com/video/moTcHEUg15KJ0EMocHcstw" class="btn btn-primary">Book Appointment</a>
-                </div>
-                </div>
-            </div>
-            </div>
-            </div>
-          </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header" style="font-size: large;">
-        <i style="padding-left:45%">Dentists</i>
-      </div>
-      <div class="card-body">
-        <div class="container">
-          <div class="row">
-            <div class="card mb-3 consult-card" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img src="https://static3.depositphotos.com/1006214/209/i/600/depositphotos_2092111-stock-photo-middle-aged-doctor-writing-in.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Dr Myles. B. Abbott, M.D.</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nulla id arcu luctus vulputate quis ac purus</p>
-                    <a href="https://call.whatsapp.com/video/moTcHEUg15KJ0EMocHcstw" class="btn btn-primary">Book Appointment</a>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="card mb-3 consult-card" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img src="https://img.freepik.com/free-photo/medium-shot-smiley-doctor-with-coat_23-2148814212.jpg?w=2000" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Dr Khedija folana, M.D.</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nulla id arcu luctus vulputate quis ac purus</p>
-                    <a href="https://call.whatsapp.com/video/moTcHEUg15KJ0EMocHcstw" class="btn btn-primary">Book Appointment</a>
-                </div>
-                </div>
-            </div>
-            </div>
-            </div>
-          </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header" style="font-size: large;">
-        <i style="padding-left:42.5%">General healthcare</i>
-      </div>
-      <div class="card-body">
-        <div class="container">
-          <div class="row">
-            <div class="card mb-3 consult-card" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img src="https://cdn.create.vista.com/api/media/small/135128856/stock-photo-male-doctor-with-stethoscope" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title"> Dr John Doe, M.D, M.S.</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nulla id arcu luctus vulputate quis ac purus</p>
-                    <a href="https://call.whatsapp.com/video/moTcHEUg15KJ0EMocHcstw" class="btn btn-primary">Book Appointment</a>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="card mb-3 consult-card" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img src="https://img.freepik.com/free-photo/vertical-portrait-african-american-medical-doctor-with-stethoscope-posing-confident-wearing-scrubs-smiling-medic-lab-coat-white-uniform-standing-with-arms-crossed-studio_482257-33326.jpg?w=2000" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Dr Femi Kayode</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nulla id arcu luctus vulputate quis ac purus</p>
-                    <a href="https://call.whatsapp.com/video/moTcHEUg15KJ0EMocHcstw" class="btn btn-primary">Book Appointment</a>
-                </div>
-                </div>
-            </div>
-            </div>
-            </div>
-          </div>
-      </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header" style="font-size: large;">
         </div>
-        <div class="card-body mx-auto">
-          <div id="icons">
-          <a href="https://web.facebook.com/nurudeen.ahmad.71" class="fa fa-facebook icons" style="font-size: xx-large;"></a>
-          <a href="https://twitter.com/nurvdeen4?s=20&t=Du_tqiu6oraiU_O-FD9rGg" class="fa fa-twitter icons" style="font-size: xx-large;"></a>
-          <a href="https://www.google.com/" class="fa fa-google icons" style="font-size: xx-large;"></a>
-          <a href="https://www.linkedin.com/in/nurudeen-ahmed-80a1a11b8/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BCbGh6YqnSouciAHLJF8rhw%3D%3D" class="fa fa-linkedin icons" style="font-size: xx-large;"></a>
-          <a href="https://www.youtube.com/channel/UCgD8FOOwIJjYZ0_9LLzA4LA" class="fa fa-youtube icons" style="font-size: xx-large;"></a>
-          <a href="https://www.instagram.com/nuru_4/" class="fa fa-instagram icons" style="font-size: xx-large;"></a>
-          <a href="https://media.tenor.com/udq1uD9WHSQAAAAC/oops.gif" class="fa fa-pinterest icons" style="font-size: xx-large;"></a>
+        <div class="card mb-3 consult-card" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="https://media.istockphoto.com/id/171296819/photo/african-american-female-doctor-holding-a-clipboard-isolated.jpg?s=612x612&w=0&k=20&c=hCJk-9gsOff8Fac04a11VMOwflMYiRXUVfAj3UTn67U="
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dr. Bolanle Reese hama, M.D.</h5>
+                <p class="card-text">
+                  Dr Bolanle is also one of the best-known doctors of
+                  Paediatrics in the world. He graduated from the University of
+                  Miam
+                </p>
+                <a
+                  href="{{ url_for('paid_appointments') }}"
+                  class="btn btn-primary"
+                  >Book Appointment</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header" style="font-size: large">
+    <i style="padding-left: 45%">Neurologists</i>
+  </div>
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="card mb-3 consult-card" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="https://thumbs.dreamstime.com/b/african-american-black-doctor-man-over-blue-background-89746088.jpg"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dr. Shamsudeen T.M Olarewaju, M.D.</h5>
+                <p class="card-text">
+                  Dr Corrie is a well-known neurologist. His specialisation
+                  field is nerve of neurology and brain cells.
+                </p>
+                <a
+                  href="{{ url_for('paid_appointments') }}"
+                  class="btn btn-primary"
+                  >Book Appointment</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 consult-card" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="../static/images/African-medical-doctor-man-isolated-on-transparent-background-PNG-removebg-preview.png"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dr. Olubunmi Muhammed, MDS</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                  sed nulla id arcu luctus vulputate quis ac purus
+                </p>
+                <a
+                  href="{{ url_for('free_appointments')}}"
+                  class="btn btn-primary"
+                  >Book Appointment</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header" style="font-size: large">
+    <i style="padding-left: 45%">Cardiologists</i>
+  </div>
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="card mb-3 consult-card" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="../static/images/new-black-doc.jpg"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dr Iborona. M. Abaza, M.D.</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                  sed nulla id arcu luctus vulputate quis ac purus
+                </p>
+                <a
+                  href="{{ url_for('paid_appointments') }}"
+                  class="btn btn-primary"
+                  >Book Appointment</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 consult-card" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="https://www.doctorcare.ca/wp-content/uploads/2020/09/header-05.png"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dr Naresh Trehan</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                  sed nulla id arcu luctus vulputate quis ac purus
+                </p>
+                <a
+                  href="{{ url_for('free_appointments')}}"
+                  class="btn btn-primary"
+                  >Book Appointment</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header" style="font-size: large">
+    <i style="padding-left: 45%">Dentists</i>
+  </div>
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="card mb-3 consult-card" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="../static/images/doc-abdullahi.jpg"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dr Abdullahi Ahmed, M.D.</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                  sed nulla id arcu luctus vulputate quis ac purus
+                </p>
+                <a
+                  href="{{ url_for('paid_appointments') }}"
+                  class="btn btn-primary"
+                  >Book Appointment</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 consult-card" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="https://img.freepik.com/free-photo/medium-shot-smiley-doctor-with-coat_23-2148814212.jpg?w=2000"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dr Khedija folana, M.D.</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                  sed nulla id arcu luctus vulputate quis ac purus
+                </p>
+                <a
+                  href="{{ url_for('free_appointments')}}"
+                  class="btn btn-primary"
+                  >Book Appointment</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header" style="font-size: large">
+    <i style="padding-left: 42.5%">General healthcare</i>
+  </div>
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="card mb-3 consult-card" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="../static/images/image.png"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dr Kheks Hamza, M.D, M.S.</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                  sed nulla id arcu luctus vulputate quis ac purus
+                </p>
+                <a
+                  href="{{ url_for('paid_appointments') }}"
+                  class="btn btn-primary"
+                  >Book Appointment</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 consult-card" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="https://img.freepik.com/free-photo/vertical-portrait-african-american-medical-doctor-with-stethoscope-posing-confident-wearing-scrubs-smiling-medic-lab-coat-white-uniform-standing-with-arms-crossed-studio_482257-33326.jpg?w=2000"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dr Femi Kayode</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                  sed nulla id arcu luctus vulputate quis ac purus
+                </p>
+                <a
+                  href="{{ url_for('free_appointments')}}"
+                  class="btn btn-primary"
+                  >Book Appointment</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

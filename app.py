@@ -157,8 +157,9 @@ def shop():
 def order():
     if request.method == "POST":
         product = request.form.get("product")
-        results = db.execute("SELECT * FROM products WHERE id = ?", product)
-        db.execute("INSERT INTO orders (userId, productId) VALUES(?, ?)", session["user_id"], int(product))
+        user_id = session["user_id"]
+        db.execute("INSERT INTO orders (userId, productId) VALUES(?, ?)", user_id, int(product))
+        results = db.execute("SELECT DISTINCT * FROM orders JOIN products ON orders.productId=products.id WHERE userId = ?", user_id)
         return render_template("order.html", results=results)
     return render_template("order.html")
 
@@ -182,10 +183,25 @@ def success():
     return render_template("success.html")
 
 
+@app.route("/cart")
+@login_required
+def cart():
+    user_id = session["user_id"]
+    results = db.execute("SELECT DISTINCT * FROM orders JOIN products ON orders.productId=products.id WHERE userId = ?", user_id)
+    return render_template("cart.html", results=results)
+
 @app.route("/orders")
 @login_required
 def orders():
     user_id = session["user_id"]
     results = db.execute("SELECT DISTINCT * FROM orders JOIN products ON orders.productId=products.id WHERE userId = ?", user_id)
-    return render_template("orders.html", results=results)
+    return render_template("cart.html", results=results)
 
+
+@app.route("/paid_appointments")
+def paid_appointments():
+    return render_template("paid_appointments.html")
+
+@app.route("/free_appointments")
+def free_appointments():
+    return render_template("free_appointments.html")
