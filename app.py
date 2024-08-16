@@ -1,5 +1,5 @@
 from cs50 import SQL
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session, jsonify
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -206,3 +206,25 @@ def paid_appointments():
 @app.route("/free_appointments")
 def free_appointments():
     return render_template("free_appointments.html")
+
+@app.route("/api/get_data", methods=["GET"])
+def get_products():
+    # Query all products from the database
+    products = db.execute("SELECT * FROM products")
+    
+    filtered_products = [
+        {
+            "name": product["name"],
+            "category": product["category"],
+            "description": product["description"],
+            "price": product["price"],
+            "stock": product["stock"]
+        }
+        for product in products
+    ]
+    
+    # Return only the filtered products
+    return jsonify(filtered_products)
+
+
+
