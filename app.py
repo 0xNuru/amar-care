@@ -160,6 +160,7 @@ def order():
         user_id = session["user_id"]
         db.execute("INSERT INTO orders (userId, productId) VALUES(?, ?)", user_id, int(product))
         results = db.execute("SELECT DISTINCT * FROM orders JOIN products ON orders.productId=products.id WHERE userId = ?", user_id)
+        print(results)
         return render_template("order.html", results=results)
     return render_template("order.html")
 
