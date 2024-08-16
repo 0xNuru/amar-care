@@ -13,6 +13,7 @@
       crossorigin="anonymous"
     />
     <link href="/static/styles.css" rel="stylesheet" />
+    <link href="/static/chatbot.css" rel="stylesheet" />
 
     <link
       href="https://fonts.googleapis.com/css?family=Courgette"
@@ -37,6 +38,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="/static/js/order.js"></script>
+    <script src="/static/js/chatbot.js"></script>
 
     <nav class="navbar border navbar-expand-md navbar-dark bg-primary">
       <svg
@@ -161,6 +163,32 @@
       </div>
     </header>
     {% endif %} {% block main %}{% endblock %}
+
+    <!-- Chatbot -->
+      <div class="chatbox">
+          <div class="chatbox__support">
+              <div class="chatbox__header">
+                  <div class="chatbox__image--header">
+                      <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                  </div>
+                  <div class="chatbox__content--header">
+                      <h4 class="chatbox__heading--header">Chat Support</h4>
+                      <p class="chatbox__description--header">Hi! How can I help you?</p>
+                  </div>
+              </div>
+              <div class="chatbox__messages">
+                  <div></div>
+              </div>
+              <div class="chatbox__footer">
+                  <input type="text" placeholder="Write a message...">
+                  <button class="chatbox__send--footer send__button">Send</button>
+              </div>
+          </div>
+          <div class="chatbox__button">
+              <button><img src="/static/images/comment-solid.svg" /></button>
+          </div>
+      </div>
+  
   </body>
   <div class="card">
         <div class="card-header" style="font-size: large;">
