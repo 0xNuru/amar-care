@@ -6,7 +6,7 @@
 
 {% block main %}
 
-    <main class="container-fluid py-5 text-center">
+    <main class="container-fluid py-5 text-center" id="order-page">
 
         <div class="card">
             <div class="card-header">
@@ -17,39 +17,111 @@
                 <h5 class="card-title">{{result["name"]}}</h5>
                 <h4 class="card-title">₦{{result["price"]}}</h4>
                 <p class="card-text">{{result["description"]}}</p>
-                    <button style="margin-bottom:10px;" class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Place order!</button>
+                <button style="margin-bottom:10px;" class="btn btn-primary place-order-btn" type="submit" data-result-name="{{ result["name"] }}">Place order!</button>
             </div>
             <div class="card-footer text-muted">
             </div>
         </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-        <div class="modal-dialog modal-dialog-centered" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="prescription-verifier">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Confirm Order</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Confirm your order to pay on delivery</p>
-                    <form action="/success" method="post">
-                        <input style="display:none;" name="product" value={{result["id"]}}>
-                        <input class="form-control form-control-sm mx-auto" name="amount" type="number" placeholder="Quantity" aria-label=".form-control-sm example" style="width:100px; margin-bottom:10px;" required >
-                        <button style="margin-bottom:10px;" class="btn btn-primary" type="submit">Place order!</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title">Upload Prescription</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="file" id="prescriptionUpload" style="display: none;">
+                        <button id="uploadButton" style="margin-bottom:10px;" class="btn btn-primary">Upload Prescription</button>
+                        <button id="submitButton" style="display: none; margin-bottom:10px;" class="btn btn-success">Submit Prescription</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
+        </div>
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirm Order</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Confirm your order to pay on delivery</p>
+                        <form action="/success" method="post">
+                            <input style="display:none;" name="product" value="{{result['id']}}">
+                            <input class="form-control form-control-sm mx-auto" name="amount" type="number" placeholder="Quantity" aria-label=".form-control-sm example" style="width:100px; margin-bottom:10px;" required>
+                            <button style="margin-bottom:10px;" class="btn btn-primary" type="submit">Place order!</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="not-presciption">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Invalid Prescription</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h1 class="modal-text">You uploaded an Invalid Medical Prescription. Please get a valid presciption from a Doctor</h1>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="not-drug">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Selected Drug not in Presciption</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h1 class="modal-text">The selected drug is not in your Medical Presciption. Please get a prescription from a Doctor</h1>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="error-modal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Error</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h1 class="error-text"></h1>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
         {% endfor %}
 
         <div class="card" style="bottom:-460px;">
-        <div class="card-header" style="font-size: large;">
+            <div class="card-header" style="font-size: large;">
+            </div>
         </div>
         
     </main>
 {% endblock %}
+
