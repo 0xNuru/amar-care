@@ -17,7 +17,8 @@
                 <h5 class="card-title">{{result["name"]}}</h5>
                 <h4 class="card-title">₦{{result["price"]}}</h4>
                 <p class="card-text">{{result["description"]}}</p>
-                <button style="margin-bottom:10px;" class="btn btn-primary place-order-btn" type="submit" data-result-name="{{ result["name"] }}">Place order!</button>
+                <p style="display: none;" class="card-text">{{result["category"]}}</p>
+                <button style="margin-bottom:10px;" class="btn btn-primary place-order-btn" type="submit" data-result-name="{{ result["name"] }}" data-result-category="{{ result["category"] }}">Place order!</button>
             </div>
             <div class="card-footer text-muted">
             </div>
