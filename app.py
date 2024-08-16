@@ -188,7 +188,7 @@ def success():
 def cart():
     user_id = session["user_id"]
     results = db.execute("SELECT DISTINCT * FROM orders JOIN products ON orders.productId=products.id WHERE userId = ?", user_id)
-    return render_template("cart.html", results=results)
+    return render_template("order.html", results=results)
 
 @app.route("/orders")
 @login_required
